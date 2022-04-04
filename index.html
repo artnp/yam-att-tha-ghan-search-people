@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Srisakdi&display=swap');
+        body{
+            font-family: 'Srisakdi', cursive;
+            font-size:x-large
+        }
+        </style>
+    
+    <title>ยามอัษการ</title>
+</head>
+<body>
+    <center>
+    <h1>ยามอัษการ</h1>
+     <h3>ดูคนที่ไม่คุ้นเคยมาหา</h3><br>
+    ผู้ เยือน มาหา เพลา: <input type="text" id="time" class="time" style="font-size:30px;width:100px;height:40px;" > โมง
+        วัน 
+        <select id="day" class="day" style="font-size:30px;width:160px;height:40px">
+            <option value="วัน อาทิตย์">วัน อาทิตย์</option>
+            <option value="วัน จันทร์">วัน จันทร์</option>
+            <option value="วัน อังคาร">วัน อังคาร</option>
+            <option value="วัน พุฒ">วัน พุฒ</option>
+            <option value="วัน พฤหัศบดิ์">วัน พฤหัศบดิ์</option>
+            <option value="วัน สุกร์">วัน สุกร์</option>
+            <option value="วัน เสาร์">วัน เสาร์</option>
+          </select> 
+      => <button class="cal" onsubmit="cal()" style="font-size:24px">ทำนาย</button>
+      <br><br>
+      <hr>
+   <b><div id="timeb"></div><div id="timec"></div></b><br>
+   <div id="text"></div>
+     
+
+    </center>
+    <script>
+today = new Date();
+time = today.getHours()+'.'+ today.getMinutes()
+day = today.getDay()
+document.querySelector('.time').value = time
+document.querySelector('.day').day = time
+
+if (day === 0){
+day = 'วัน อาทิตย์'
+} else if (day === 1){
+    day = 'วัน จันทร์'
+} else if (day === 2){
+    day = 'วัน อังคาร'
+} else if (day === 3){
+    day = 'วัน พุฒ'
+} else if (day === 4){
+    day = 'วัน พฤหัศบดิ์'
+} else if (day === 5){
+    day = 'วัน สุกร์'
+} else if (day === 5){
+    day = 'วัน เสาร์'
+}
+document.querySelector('.day').value = day
+
+function cal() {
+
+    if (day === 'วัน อาทิตย์'){
+        sunday()
+    } else if (day === 'วัน จันทร์'){
+         monday()
+    } else if (day === 'วัน อังคาร'){
+         tuesday()
+    } else if (day === 'วัน พุฒ'){
+         wednesday()
+    } else if (day === 'วัน พฤหัศบดิ์'){
+         thursday()
+    } else if (day === 'วัน สุกร์'){
+         friday()
+    } else if (day === 'วัน เสาร์'){
+         saturday()
+    }
+
+    function sunday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผัว เมีย ด่า กัน แล้ว จึ่ง มา ๆ พบ คน ๒ คน เจรจา ด้วย แล้ว จึ่ง มา เอา หมาก พลู แบ่ง กิน บ้าง ถ้า พบ สัตว์ ๔ เท้า ๒ เท้า เคราะห์ ร้าย แล'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'สุกระ'
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }   //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function monday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function tuesday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function wednesday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function thursday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function friday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+  function saturday() {
+  //รุ่ง
+  if (time >= 6.00 && time <= 7.30){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 7.30 && time <= 9.00){
+  timea = 'ครู'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 9.00 && time <= 10.30){
+  timea = 'ภุมมะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 10.30 && time <= 12.00){
+  timea = 'สุริยะ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 12.00 && time <= 13.30){
+  timea = 'สุกระ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 13.30 && time <= 15.00){
+  timea = 'พุฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 15.00 && time <= 16.30){
+  timea = 'จันเทา'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 16.30 && time <= 18.00){
+  timea = 'เสารี'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  } //ค่ำ
+  else if (time >= 18.00 && time <= 19.30){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๑ ยาม'
+  document.getElementById('text').innerHTML = 'ผู้ ชาย ดำแดง ลัก ถ้า ค่า หนี วัว ควาย หาย ให้ หา หน อิสาณ แล ทักษิณ ถ้า เรือ หาย เขา ได้ ไว้ มี ผู้ จะ มา บอก ข่าว คน นั้น เปน แผล ที่ หน้า ผาก เอา ไป ไว้ ข้าง อุดร เรือน มัน อยู่ ไกล้ เจ้า ของ มัน ฝาก ไว้ แก่ ท่าน ๕ วัน จะ ได้ พ้น มิ ได้ เลย'
+  } else if (time >= 19.30 && time <= 21.00){
+  timea = 'พุฒโฒ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๒ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา เถียง กัน กับ ผู้ หญิง ด้วย เข้า ของ แล้ว จึ่ง มา เอา หมาก พลู แบ่ง ไว้ เรือน บ้าง เมื่อ คืน หลัง ไป แล้ว จึ่ง มา พบ พี่ น้อง ใน หน ทาง เจรจา ด้วย แล้ว จึ่ง มา ถ้า มิฉะนั้น เถียง กัน ด้วย สัตว์ ๔ เท้า ๒ เท้า แล'
+  } else if (time >= 21.00 && time <= 22.30){
+  timea = 'ระวิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๓ ยาม'
+  document.getElementById('text').innerHTML = 'มา ทั้ง เคือง มา พบ คน ถือ หอก ดาบ แล้ว มา ด้วย กัน กับ เขา ว่า เคราะห์ ร้าย แล'
+  } else if (time >= 22.30 && time <= 23.59){
+  timea = 'ชีโว'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๔ ยาม'
+  document.getElementById('text').innerHTML = 'พี่ น้อง มา หา แล้ว จึ่ง มา เมื่อ มา มี อัน ซ่อน ไว้ มิ อยู่ ใต้ ต้นไม้ มิ เห็น วัวควาย ตกใจ หน่อย หนึ่ง มิ กิน ลูกไม้ จึ่ง มา แล'
+  } else if (time >= 0.00 && time <= 1.30){
+  timea = 'สะสิ'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๕ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา มี คน เรียก มิฉะนั้น โกรธ กับ พ่อ แม่ ยาย แล ลูก เมีย มิฉะนั้น วิวาท กัน กลาง ทาง แล'
+  } else if (time >= 1.30 && time <= 3.00){
+  timea = 'สุกโกร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๖ ยาม'
+  document.getElementById('text').innerHTML = 'เมื่อ มา พบ พี่ น้อง กลาง ทาง มา ด้วย กัน แล แวะ เข้า แห่ง หนึ่ง ถ้า พี่ น้อง สัตรู ๔ เท้า ๒ เท้า ขวาง หน้า มิฉะนั้น เห็น ผู้ หญิง ดำ ที่ หน ทาง แล'
+  } else if (time >= 3.00 && time <= 4.30){
+  timea = 'ภุมโม'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๗ ยาม'
+  document.getElementById('text').innerHTML = 'สูบ ยา กิน หมาก แล้ว จึ่ง มา มิฉะนั้น กิน เข้า แล้ว จึ่ง มา ผิ ไข้ ตาย ของ หาย มิได้ เลย'
+  } else if (time >= 4.30 && time <= 6.00){
+  timea = 'เสาโร'
+  document.getElementById('timeb').innerHTML = timea
+  document.getElementById('timec').innerHTML = '• ๘ ยาม'
+  document.getElementById('text').innerHTML = 'ไม่ มี คำ ทำนาย แล'
+  }}
+
+
+
+}
+document.querySelector('.cal').addEventListener("click", ()=>cal())
+
+</script>
+</body>
+</html>
