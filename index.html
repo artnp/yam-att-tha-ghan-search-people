@@ -40,7 +40,6 @@ today = new Date();
 time = today.getHours()+'.'+ today.getMinutes()
 day = today.getDay()
 document.querySelector('.time').value = time
-document.querySelector('.day').day = time
 
 if (day === 0){
 day = 'วัน อาทิตย์'
@@ -60,7 +59,9 @@ day = 'วัน อาทิตย์'
 document.querySelector('.day').value = day
 
 function cal() {
-
+day = document.getElementById("day").value
+time = document.getElementById("time").value
+    
     if (day === 'วัน อาทิตย์'){
         sunday()
     } else if (day === 'วัน จันทร์'){
